@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <span class="logo">Reel</span>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="search.html">Search</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="watchlist.html">Watchlist</a>
+    </nav>
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="text"
+        id="nav-search-input"
+        placeholder="Search movies, cast..."
+        autocomplete="off"
+      />
+    </div>
+  </header>
+  <section id="hero" class="hero">
+    <img id="hero-poster" class="hero-poster" src="" alt="" />
+    <div class="hero-info">
+      <span id="hero-badge" class="hero-badge"></span>
+      <h1 id="hero-title" class="hero-title"></h1>
+      <p id="hero-meta" class="hero-meta"></p>
+      <p id="hero-overview" class="hero-overview"></p>
+      <div id="hero-tags" class="hero-tags"></div>
+      <div class="hero-actions">
+        <button id="hero-watchlist-btn" class="btn-ghost" onclick="heroToggleWatchlist()">+ Watchlist</button>
+        <button id="hero-fav-btn" class="btn-ghost" onclick="heroToggleFav()">♡ Favorite</button>
+        <button class="btn-primary" onclick="heroOpenModal()">View Details</button>
+      </div>
+    </div>
+  </section>
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Trending</h2>
+        <a href="search.html" class="see-all">See all →</a>
+      </div>
+      <div id="trending-row" class="movies-row"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Popular right now</h2>
+        <a href="search.html" class="see-all">See all →</a>
+      </div>
+      <div id="popular-row" class="movies-row"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Top rated all time</h2>
+        <a href="search.html" class="see-all">See all →</a>
+      </div>
+      <div id="top-rated-row" class="movies-row"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Now Playing</h2>
+        <a href="search.html" class="see-all">See all →</a>
+      </div>
+      <div id="now-playing-row" class="movies-row"></div>
+    </section>
+  </main>
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="api.js"></script>
+  <script src="storage.js"></script>
+  <script src="modal.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
